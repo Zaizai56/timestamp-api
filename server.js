@@ -13,7 +13,6 @@ app.get('/:url', function(req, res){
     console.log("error");
   }
   var reqUrl = req.url.substring(1);
-  res.send(JSON.stringify({unix:reqUrl}));
   if(!isNaN(parseFloat(reqUrl))){
     var natural = moment.unix(reqUrl).format("MMM DD,YYYY");
     var unix = reqUrl;
@@ -25,6 +24,7 @@ app.get('/:url', function(req, res){
     unix = null;
   }
   var answer = JSON.stringify({unix: unix,natural: natural});
+  res.send(answer);
 });
 
 var port = process.env.PORT || 8080; // set our port
