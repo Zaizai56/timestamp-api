@@ -2,13 +2,11 @@ var express = require("express");
 var moment = require("moment");
 var app = express();
 
-app.get(function(req, res) {
-      res.sendFile(process.cwd() + '/index.html');
-});
+app.use(express.static(__dirname + "/../public"));
 
 app.get('/:url', function(req, res){
   try{
-    decodeURIComponent(req.url.substring(0))
+    decodeURIComponent(req.url.substring(0));
   } catch(e){
     console.log("error");
   }
