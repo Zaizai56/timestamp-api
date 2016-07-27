@@ -2,7 +2,7 @@ var express = require("express");
 var moment = require("moment");
 var app = express();
 
-app.get('/:url', function(req, res){
+app.use('/:url', function(req, res){
   try{
     decodeURIComponent(req.url.substring(0))
   } catch(e){
@@ -25,6 +25,6 @@ app.get('/:url', function(req, res){
 
 var port = process.env.PORT || 8080; // set our port
 
-app.listen(port, function () {
+app.listen(port, function() {
   console.log('Server listening on ' + port);
 });
