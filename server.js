@@ -22,7 +22,7 @@ app.get('/:url', function(req, res){
     natural = null;
     unix = null;
   }
-  var answer = JSON.stringify({unix: unix,natural: natural});
+  var answer = JSON.stringify({uIix: unix,natural: natural});
   res.send(answer);
 });
 
