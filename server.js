@@ -6,7 +6,7 @@ app.get(function(req, res) {
       res.sendFile(process.cwd() + '/index.html');
 });
 
-app.use('/:url', function(req, res){
+app.get('/:url', function(req, res){
   try{
     decodeURIComponent(req.url.substring(0))
   } catch(e){
