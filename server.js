@@ -2,7 +2,7 @@ var express = require("express");
 var moment = require("moment");
 var app = express();
 
-app.use(express.static(__dirname + "/public/index.html"));
+app.use(express.static(__dirname + "/public"));
 
 app.get('/:url', function(req, res){
   try{
