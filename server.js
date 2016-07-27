@@ -13,6 +13,7 @@ app.get('/:url', function(req, res){
     console.log("error");
   }
   var reqUrl = req.url.substring(1);
+  if (reqUrl == "")  res.sendFile('/index.html');
   if(!isNaN(parseFloat(reqUrl))){
     var natural = moment.unix(reqUrl).format("MMM DD,YYYY");
     var unix = reqUrl;
