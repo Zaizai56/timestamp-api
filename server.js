@@ -23,6 +23,8 @@ app.get('/:url', function(req, res){
   res.send(answer);
 });
 
-app.listen(process.env.PORT, function () {
-  console.log('Server listening on $PORT!');
+var port = process.env.PORT || 8080; // set our port
+
+app.listen(port, function () {
+  console.log('Server listening on ' + port);
 });
