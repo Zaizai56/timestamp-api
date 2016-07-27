@@ -2,6 +2,10 @@ var express = require("express");
 var moment = require("moment");
 var app = express();
 
+app.get(function(req, res) {
+      res.sendFile(process.cwd() + '/index.html');
+});
+
 app.use('/:url', function(req, res){
   try{
     decodeURIComponent(req.url.substring(0))
