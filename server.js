@@ -13,7 +13,7 @@ app.use('/:url', function(req, res){
     console.log("error");
   }
   var reqUrl = req.url.substring(1);
-  res.send(JSON.stringify({unix:reqUrl}));
+  res.send(JSON.stringify({uniX:reqUrl}));
   if(!isNaN(parseFloat(reqUrl))){
     var natural = moment.unix(reqUrl).format("MMM DD,YYYY");
     var unix = reqUrl;
